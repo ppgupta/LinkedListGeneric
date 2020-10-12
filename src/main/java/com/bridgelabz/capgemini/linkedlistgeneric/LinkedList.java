@@ -53,6 +53,12 @@ public class LinkedList<E> {
 		myNode.setNext(newNode);
 		newNode.setNext(tempNode);
 	}
+	public INode pop() {
+		INode tempNode = head;
+		head = head.getNext();
+		return tempNode;
+	}
+	
 	//print nodes of linked list
 	public void printMyNodes() {
 		StringBuffer myNodes = new StringBuffer("My Nodes: ");

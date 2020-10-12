@@ -77,4 +77,22 @@ public class LinkedListTest
 				&&myList.getTail().equals(myThirdNode);
 		assertTrue(result);
     }
+    //UC5 test cases
+    @Test
+    public void given3NumbersDeleteFirstfromInLinkedList() {
+		MyNode<Integer> myFirstNode = new MyNode<Integer>(56);
+		MyNode<Integer> mySecondNode = new MyNode<Integer>(30);
+		MyNode<Integer> myThirdNode = new MyNode<Integer>(70);
+		LinkedList<Integer>myList=new LinkedList<>();
+		myList.append(myFirstNode);
+		myList.append(mySecondNode);
+		myList.append( myThirdNode);
+		myList.pop();
+		myList.printMyNodes();
+		boolean result=myList.getHead().equals(mySecondNode)
+				//&& myList.getHead().getNext().equals(mySecondNode)
+				&&myList.getTail().equals(myThirdNode);
+		assertTrue(result);
+    }
+
 }
