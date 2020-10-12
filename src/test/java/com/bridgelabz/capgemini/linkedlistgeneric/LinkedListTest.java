@@ -61,4 +61,20 @@ public class LinkedListTest
 				&&myList.getTail().equals(myThirdNode);
 		assertTrue(result);
     }
+  //UC4 test cases
+    @Test
+    public void given3NumbersInsertingSecondShouldBeAddedInLinkedList() {
+		MyNode<Integer> myFirstNode = new MyNode<Integer>(56);
+		MyNode<Integer> mySecondNode = new MyNode<Integer>(30);
+		MyNode<Integer> myThirdNode = new MyNode<Integer>(70);
+		LinkedList<Integer>myList=new LinkedList<>();
+		myList.addFromFront(myFirstNode);
+		myList.append(myThirdNode);
+		myList.insert(myFirstNode, mySecondNode);
+		myList.printMyNodes();
+		boolean result=myList.getHead().equals(myFirstNode)
+				&& myList.getHead().getNext().equals(mySecondNode)
+				&&myList.getTail().equals(myThirdNode);
+		assertTrue(result);
+    }
 }
