@@ -93,7 +93,7 @@ public class LinkedListTest
 				&&myList.getTail().equals(myThirdNode);
 		assertTrue(result);
     }
-  //UC5 test cases
+  //UC6 test cases
     @Test
     public void given3NumbersDeleteLastfromInLinkedList() {
 		MyNode<Integer> myFirstNode = new MyNode<Integer>(56);
@@ -110,6 +110,23 @@ public class LinkedListTest
 				&&myList.getTail().equals(mySecondNode);
 		assertTrue(result);
     }
+    //UC7 test cases
+    @Test
+	public void givenNodeOf30_WhenSearched_ShouldReturnTrue() {
+		MyNode<Integer> myFirstNode = new MyNode<Integer>(56);
+		MyNode<Integer> mySecondNode = new MyNode<Integer>(30);
+		MyNode<Integer> myThirdNode = new MyNode<Integer>(70);
+		LinkedList<Integer> myList = new LinkedList<Integer>();
+		myList.append(myFirstNode);
+		myList.append(mySecondNode);
+		myList.append(myThirdNode);
+		MyNode<Integer> newNode = (MyNode<Integer>) myList.searchNode((Integer) 30);
 
+		boolean check = false;
+		if (newNode != null && newNode.getData().equals((Integer) 30))
+			check = true;
+		assertTrue(check);
+		myList.printMyNodes();
+	}
 
 }

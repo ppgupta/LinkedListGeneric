@@ -67,6 +67,18 @@ public class LinkedList<E> {
 		tempNode = tempNode.getNext();
 		return tempNode;
 	}
+	public INode searchNode(E element) {
+		if(head==null||tail==null)
+			return null;
+		INode tempNode = head;
+		INode ptr = null;
+		while (tempNode.getNext() != null) {
+			if (tempNode.getData().equals(element))
+				ptr = tempNode;
+			tempNode = tempNode.getNext();
+		}
+		return ptr;
+	}
 	//print nodes of linked list
 	public void printMyNodes() {
 		StringBuffer myNodes = new StringBuffer("My Nodes: ");
