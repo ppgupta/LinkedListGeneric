@@ -4,7 +4,11 @@ public class LinkedList<E> {
 	
 	private INode head;
 	private INode tail;
-
+	
+	public LinkedList() {
+		this.head = null;
+		this.tail = null;
+	}
 	public INode getHead() {
 		return head;
 	}
@@ -20,10 +24,28 @@ public class LinkedList<E> {
 	public void setTail(INode tail) {
 		this.tail = tail;
 	}
-
-	public LinkedList() {
-		this.head = null;
-		this.tail = null;
+	public void addFromFront(INode Node) {
+		if (head == null)
+			head = Node;
+		if (tail == null)
+			tail = Node;
+		else {
+			INode tempNode = head;
+			head = Node;
+			Node.setNext(tempNode);
+		}
+	}
+	public void printMyNodes() {
+		StringBuffer myNodes = new StringBuffer("My Nodes: ");
+		INode tempNode = head;
+		while (tempNode.getNext() != null) {
+			myNodes.append(tempNode.getData());
+			if (!tempNode.equals(tail))
+				myNodes.append("->");
+			tempNode = tempNode.getNext();
+		}
+		myNodes.append(tempNode.getData());
+		System.out.println(myNodes);
 	}
 	
 	
