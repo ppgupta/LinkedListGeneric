@@ -13,6 +13,7 @@ public class LinkedListTest
     /**
      * Rigorous Test :-)
      */
+	//UC1 test case
     @Test
     public void given3NumbersShouldBeAddedInLinkedListTest() {
 		MyNode<Integer> myFirstNode = new MyNode<Integer>(56);
