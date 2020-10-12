@@ -37,12 +37,28 @@ public class LinkedListTest
 		myList.addFromFront(myFirstNode);
 		myList.addFromFront(mySecondNode);
 		myList.addFromFront(myThirdNode);
-		
+		myList.printMyNodes();
 		
 		boolean result=myList.getHead().equals(myThirdNode)
 				&& myList.getHead().getNext().equals(mySecondNode)
 				&&myList.getTail().equals(myFirstNode);
 		assertTrue(result);
 
+    }
+  //UC3 test cases
+    @Test
+    public void given3NumbersShouldBeAddedInLinkedListFromLast() {
+		MyNode<Integer> myFirstNode = new MyNode<Integer>(56);
+		MyNode<Integer> mySecondNode = new MyNode<Integer>(30);
+		MyNode<Integer> myThirdNode = new MyNode<Integer>(70);
+		LinkedList<Integer>myList=new LinkedList<>();
+		myList.append(myFirstNode);
+		myList.append(mySecondNode);
+		myList.append(myThirdNode);
+		myList.printMyNodes();
+		boolean result=myList.getHead().equals(myFirstNode)
+				&& myList.getHead().getNext().equals(mySecondNode)
+				&&myList.getTail().equals(myThirdNode);
+		assertTrue(result);
     }
 }

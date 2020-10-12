@@ -35,6 +35,19 @@ public class LinkedList<E> {
 			Node.setNext(tempNode);
 		}
 	}
+	
+	//Append from last
+	public void append(INode Node) {
+		if (head == null) {
+			head = Node;
+			tail = Node;
+		} 
+		else {
+			tail.setNext(Node);
+			tail = Node;
+		}
+	}
+
 	public void printMyNodes() {
 		StringBuffer myNodes = new StringBuffer("My Nodes: ");
 		INode tempNode = head;
