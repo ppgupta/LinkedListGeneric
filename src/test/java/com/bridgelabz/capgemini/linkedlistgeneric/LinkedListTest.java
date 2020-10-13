@@ -165,6 +165,26 @@ public class LinkedListTest
 		assertEquals(3, myList.size());
 		myList.printMyNodes();
 	}
+    
+    //UC10 test cases
+    @Test
+	public void givenNodesInLinkedListShouldBeAddedInAscendingOrder() {
+		MyNode<Integer> myFirstNode = new MyNode<Integer>(56);
+		MyNode<Integer> mySecondNode = new MyNode<Integer>(30);
+		MyNode<Integer> myThirdNode = new MyNode<Integer>(40);
+		MyNode<Integer> myFourthNode = new MyNode<Integer>(70);
+		LinkedList<Integer> myList = new LinkedList<Integer>();
+		myList.addInSortedForm(myFirstNode);
+		myList.addInSortedForm(mySecondNode);
+		myList.addInSortedForm(myThirdNode);
+		myList.addInSortedForm(myFourthNode);
+		boolean check = myList.getHead().equals(mySecondNode)
+				&& myList.getHead().getNext().equals(myThirdNode)
+				&& myList.getHead().getNext().getNext().equals(myFirstNode)
+				&& myList.getTail().equals(myFourthNode);
+		assertTrue(check);
+		myList.printMyNodes();
+	}
 
     
 

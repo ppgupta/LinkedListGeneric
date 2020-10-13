@@ -1,6 +1,6 @@
 package com.bridgelabz.capgemini.linkedlistgeneric;
 
-public class LinkedList<E> {
+public class LinkedList<E extends Comparable> {
 	
 	private INode head;
 	private INode tail;
@@ -109,6 +109,41 @@ public class LinkedList<E> {
 		}
 		return count;
 	}
+	public void addInSortedForm(INode customNode) {
+		if (head == null) {
+			head = customNode;
+			tail = customNode;
+		} else {
+			INode tempNode = head;
+			INode prevNode = null;
+			while (((Comparable) customNode.getData()).compareTo(tempNode.getData()) > 0 && tempNode.getNext() != null) {
+				prevNode = tempNode;
+				tempNode = tempNode.getNext();
+			}
+			if (prevNode == null) {
+				if (((Comparable) tempNode.getData()).compareTo(customNode.getData()) > 0) {
+					customNode.setNext(tempNode);
+					head = customNode;
+				} else {
+					INode temp = head.getNext();
+					head.setNext(customNode);
+					customNode.setNext(temp);
+				}
+			}
+
+			else {
+				if (((Comparable) tempNode.getData()).compareTo(customNode.getData()) > 0) {
+					prevNode.setNext(customNode);
+					customNode.setNext(tempNode);
+				} else {
+					tempNode.setNext(customNode);
+					tail = customNode;
+				}
+			}
+
+		}
+	}
+	
 	
 	//print nodes of linked list
 	public void printMyNodes() {
