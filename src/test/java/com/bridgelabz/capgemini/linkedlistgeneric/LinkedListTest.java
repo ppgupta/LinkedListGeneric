@@ -122,11 +122,29 @@ public class LinkedListTest
 		myList.append(myThirdNode);
 		MyNode<Integer> newNode = (MyNode<Integer>) myList.searchNode((Integer) 30);
 
-		boolean check = false;
-		if (newNode != null && newNode.getData().equals((Integer) 30))
-			check = true;
-		assertTrue(check);
+		
+		boolean result =newNode != null && newNode.getData().equals((Integer) 30);
+
+		assertTrue(result);
 		myList.printMyNodes();
 	}
+    //UC8 Test cases
+    @Test
+	public void given3NumbersInsert40After30InGivenLinkedList() {
+		MyNode<Integer> myFirstNode = new MyNode<Integer>(56);
+		MyNode<Integer> mySecondNode = new MyNode<Integer>(30);
+		MyNode<Integer> myThirdNode = new MyNode<Integer>(70);
+		LinkedList<Integer> myList = new LinkedList<Integer>();
+		myList.append(myFirstNode);
+		myList.append(mySecondNode);
+		myList.append(myThirdNode);
+		MyNode<Integer> newNode = (MyNode<Integer>) myList.searchNodeAndInsert((Integer) 30, (Integer) 40);
+
+		boolean result =newNode != null && newNode.getNext().getData().equals((Integer) 40);
+		assertTrue(result);
+		myList.printMyNodes();
+	}
+    
+    
 
 }
