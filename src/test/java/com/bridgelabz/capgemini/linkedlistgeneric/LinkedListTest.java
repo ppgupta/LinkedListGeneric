@@ -1,5 +1,6 @@
 package com.bridgelabz.capgemini.linkedlistgeneric;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -144,7 +145,27 @@ public class LinkedListTest
 		assertTrue(result);
 		myList.printMyNodes();
 	}
-    
+
+  //UC9 Test cases
+    @Test
+	public void given3NumbersDelete40After30InGivenLinkedList() {
+		MyNode<Integer> myFirstNode = new MyNode<Integer>(56);
+		MyNode<Integer> mySecondNode = new MyNode<Integer>(30);
+		MyNode<Integer> myThirdNode = new MyNode<Integer>(40);
+		MyNode<Integer> myFourthNode = new MyNode<Integer>(70);
+
+		LinkedList<Integer> myList = new LinkedList<Integer>();
+		myList.append(myFirstNode);
+		myList.append(mySecondNode);
+		myList.append(myThirdNode);
+		myList.append(myFourthNode);
+		MyNode<Integer> newNode = (MyNode<Integer>) myList.searchNode((Integer) 30);
+		if (newNode != null)
+			myList.deleteNode(newNode);
+		assertEquals(3, myList.size());
+		myList.printMyNodes();
+	}
+
     
 
 }
