@@ -58,5 +58,19 @@ public class HashMap<E extends Comparable<E>,V extends Comparable<V>> {
 	public String toString() {
 		return "MyLinkedListHashMap List{"+myBucketArray+'}';
 	}
+	public void remove(E key) {
+		int index = getBucketIndex(key);
+		LinkedList<E> myList = this.myBucketArray.get(index);
+		if(myList==null)
+			return;
+		MapNode myMapNode =  (MapNode) myList.getHead();
+		while(myMapNode.getNext()!=null) {
+			if(myMapNode.getData()==key) {
+				myList.deleteNode(myMapNode);
+			}
+			myMapNode = (MapNode) myMapNode.getNext();
+		}
+	}
+	
    
 }
