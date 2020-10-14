@@ -19,8 +19,17 @@ private LinkedList myList;
 		myList.printMyNodes();	
 	}
 
-	
-	
+	public INode pop() {
+		return myList.pop();
+	}
 
-	
+	public int size() {
+		return myList.size();
+	}
+
+	public boolean isEmpty() {
+		if(size()==0)
+			return true;
+		else return false;
+	}
 }
