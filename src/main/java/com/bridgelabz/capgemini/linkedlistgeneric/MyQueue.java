@@ -18,4 +18,17 @@ public class MyQueue {
 	public INode top() {
 		return myList.getHead();
 	}
+	public INode dequeue() {
+		return myList.popLast();
+	}
+
+	public int size() {
+		return myList.size();
+	}
+
+	public boolean isEmpty() {
+		if(size()==0)
+			return true;
+		else return false;
+	}
 }
